@@ -9,7 +9,7 @@ return {
     "williamboman/mason-lspconfig.nvim" , 
     config = function()
       require('mason-lspconfig').setup({
-        ensure_installed = { "lus_ls","texlab", "grammarly", "pyright"}
+        ensure_installed = { "lua_ls","texlab", "grammarly", "pyright"}
       })
     end
   },   
