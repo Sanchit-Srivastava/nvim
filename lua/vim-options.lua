@@ -14,13 +14,12 @@ vim.cmd("set shiftwidth=4")
 --backup and undo
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("Home") .. "/.vim/undodir"
+vim.opt.undodir = "~/.config/nvim/.undo//"
 vim.opt.undofile = true
 
 --vim search options
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
-
 
 --colourse
 vim.opt.termguicolors = true
@@ -29,7 +28,7 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 
 --random
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
