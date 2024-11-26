@@ -32,6 +32,25 @@ vim.opt.scrolloff = 8
 vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 --vim.opt.colorcolumn = "80"
+vim.opt.splitright = true
+
+-- Open help files in a vertical split
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "help",
+    callback = function()
+        local width = math.floor(vim.o.columns * 0.3) -- 30% of total width
+        vim.cmd("wincmd L | vertical resize " .. width)
+    end,
+})
+
+-- Open git in a vertical split
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "fugitive",
+    callback = function()
+        local width = math.floor(vim.o.columns * 0.3) -- 30% of total width
+        vim.cmd("wincmd L | vertical resize " .. width)
+    end,
+})
 
 --Vimtex options
 vim.cmd("set encoding=utf-8")
