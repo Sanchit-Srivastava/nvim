@@ -1,47 +1,47 @@
 return {
-	{
-		"williamboman/mason.nvim",
-		config = function()
-			require("mason").setup()
-		end,
-	},
-	{
-		"williamboman/mason-lspconfig.nvim",
-		lazy = false,
-		opts = {
-			autoinstall = true,
-		},
-		config = function()
-			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "texlab", "grammarly", "pyright" },
-			})
-		end,
-	},
-	{
-		"neovim/nvim-lspconfig",
-		config = function()
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
-			local lspconfig = require("lspconfig")
-			lspconfig.lua_ls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.texlab.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.grammarly.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.pyright.setup({
-				capabilities = capabilities,
-			})
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
-			vim.keymap.set({ "n", "v" }, "<leader>ca", function()
-				vim.lsp.buf.code_action()
-			end, {})
-			vim.keymap.set({ "n", "v" }, "<leader>gr", function()
-				vim.lsp.buf.references()
-			end, {})
-		end,
-	},
+    {
+        "williamboman/mason.nvim",
+        config = function()
+            require("mason").setup()
+        end,
+    },
+    {
+        "williamboman/mason-lspconfig.nvim",
+        lazy = false,
+        opts = {
+            autoinstall = true,
+        },
+        config = function()
+            require("mason-lspconfig").setup({
+                ensure_installed = { "lua_ls", "texlab", "grammarly", "pyright" },
+            })
+        end,
+    },
+    {
+        "neovim/nvim-lspconfig",
+        config = function()
+            local capabilities = require("cmp_nvim_lsp").default_capabilities()
+            local lspconfig = require("lspconfig")
+            lspconfig.lua_ls.setup({
+                capabilities = capabilities,
+            })
+            lspconfig.texlab.setup({
+                capabilities = capabilities,
+            })
+            lspconfig.grammarly.setup({
+                capabilities = capabilities,
+            })
+            lspconfig.pyright.setup({
+                capabilities = capabilities,
+            })
+            vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+            vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "go to definition" })
+            vim.keymap.set({ "n", "v" }, "<leader>ca", function()
+                vim.lsp.buf.code_action()
+            end, { desc = "code actions" })
+            vim.keymap.set({ "n", "v" }, "<leader>gr", function()
+                vim.lsp.buf.references()
+            end, { desc = "get references" })
+        end,
+    },
 }

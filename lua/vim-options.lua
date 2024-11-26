@@ -57,3 +57,5 @@ vim.cmd("set encoding=utf-8")
 vim.cmd("filetype plugin on")
 vim.g.vimtex_quickfix_mode = 0
 vim.g.vimtex_log_verbose = 0
+
+
