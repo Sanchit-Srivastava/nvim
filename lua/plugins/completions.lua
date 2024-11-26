@@ -14,7 +14,7 @@ return {
         },
         "saadparwaiz1/cmp_luasnip", -- for autocompletion
         "rafamadriz/friendly-snippets", -- useful snippets
-        "onsails/lspkind.nvim",     -- vs-code like pictograms
+        "onsails/lspkind.nvim",   -- vs-code like pictograms
     },
     config = function()
         local cmp = require("cmp")
@@ -62,7 +62,6 @@ return {
         })
     end,
 }
-
 
 -- return {
 --     {
