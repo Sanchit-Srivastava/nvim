@@ -7,11 +7,8 @@ return {
 				null_ls.builtins.formatting.stylua,
 				null_ls.builtins.formatting.black,
 				null_ls.builtins.formatting.isort,
-				--null_ls.builtins.formatting.latexindent,
-				null_ls.builtins.formatting.bibclean,
-				null_ls.builtins.diagnostics.vale,
 			},
 		})
-		vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {desc = "formatting"})
+		vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format, { desc = "formatting" })
 	end,
 }
