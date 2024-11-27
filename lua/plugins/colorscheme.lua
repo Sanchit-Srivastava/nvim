@@ -5,13 +5,13 @@
 -- 		require("onenord").setup()
 -- 	end,
 -- }
--- ---------------------------------------------drcaula-----------------------------------------------
-return {
-    "Mofiqul/dracula.nvim",
-    config = function()
-        vim.cmd([[colorscheme dracula-soft]])
-    end,
-}
+-- -- ---------------------------------------------drcaula-----------------------------------------------
+-- return {
+--     "Mofiqul/dracula.nvim",
+--     config = function()
+--         vim.cmd([[colorscheme dracula-soft]])
+--     end,
+-- }
 -- -- -----------------------------------------cyberdream----------------------------------------------
 -- -- return {
 -- --     "scottmckendry/cyberdream.nvim",
@@ -66,11 +66,11 @@ return {
 -- }
 
 ----------------------------------------------------------------------Catpuccin
---return {
---"catppuccin/nvim",
---name = "catppuccin",
---priority = 1000,
---config = function()
---vim.cmd.colorscheme "catppuccin"
---end
---}
+return {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    config = function()
+        vim.cmd.colorscheme("catppuccin")
+    end,
+}
