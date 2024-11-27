@@ -36,20 +36,20 @@ vim.opt.splitright = true
 
 -- Open help files in a vertical split
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = "help",
-    callback = function()
-        local width = math.floor(vim.o.columns * 0.3) -- 30% of total width
-        vim.cmd("wincmd L | vertical resize " .. width)
-    end,
+	pattern = "help",
+	callback = function()
+		local width = math.floor(vim.o.columns * 0.5) -- 50% of total width
+		vim.cmd("wincmd L | vertical resize " .. width)
+	end,
 })
 
 -- Open git in a vertical split
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = "fugitive",
-    callback = function()
-        local width = math.floor(vim.o.columns * 0.3) -- 30% of total width
-        vim.cmd("wincmd L | vertical resize " .. width)
-    end,
+	pattern = "fugitive",
+	callback = function()
+		local width = math.floor(vim.o.columns * 0.3) -- 30% of total width
+		vim.cmd("wincmd L | vertical resize " .. width)
+	end,
 })
 
 --Vimtex options
@@ -58,4 +58,5 @@ vim.cmd("filetype plugin on")
 vim.g.vimtex_quickfix_mode = 0
 vim.g.vimtex_log_verbose = 0
 
-
+--Python formatting with global black--
+vim.keymap.set("n", "<leader>bf", ":silent !black <CR>")
